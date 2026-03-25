@@ -52,6 +52,16 @@ class MainActivity : AppCompatActivity() {
            // intent.setData(Uri.parse(website))
             this.startActivity(intent)
         }
+
+        binding.startService.setOnClickListener {
+            val intent = Intent(this, LoggingService::class.java)
+            this.startService(intent)
+            //this.bindService(intent)
+        }
+        binding.stopService.setOnClickListener {
+            val intent = Intent(this, LoggingService::class.java)
+            this.stopService(intent)
+        }
     }
 
     override fun onSaveInstanceState(outState: Bundle) {

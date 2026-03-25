@@ -12,13 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Rotation"
         tools:targetApi="31">
-<!--        static registration-->
+        <service
+            android:name=".LoggingService"
+            android:enabled="true"
+            android:exported="true"></service>
+        <!-- static registration -->
         <receiver
             android:name=".wifiReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
             </intent-filter>
         </receiver>
 
